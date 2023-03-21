@@ -2,15 +2,36 @@ version: "3"
 services:
   mariadb:
     build: ./requirements/mariadb
-    ports:
-      - "8080:80"
+    container_name: mariadb
+    # ports:
+    #   - "8080:80"
     env_file:
       - .env
+    volumes:
+      - mariadb_data:/var/lib/mysql
     restart: always
   nginx:
     build: ./requirements/nginx
+    container_name: nginx
     ports:
       - "443:443"
     env_file:
       - .env
+    volumes:
+      - wordpress_data:/var/www/html
     restart: always
+  wordpress:
+    depends_on:
+      - mariadb
+    container_name: wordpress
+    build: ./requirements/wordpres
+    ports:
+      - "9000:9000"
+    env_file:
+      - .env
+    volumes:
+      - "wordpress_data:/var/www/html"
+    restart: alwyas
+volumes:
+  mariadb_data:
+  wordpress_data:
