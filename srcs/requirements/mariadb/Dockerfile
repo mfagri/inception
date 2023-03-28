@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y mariadb-server
 
 EXPOSE 3306
 
-# # Start the MySQL server
-# CMD ["./script.sh","mysqld"]
 COPY ./tools/script.sh /
 RUN chmod +x script.sh
 ENTRYPOINT [ "./script.sh" ]

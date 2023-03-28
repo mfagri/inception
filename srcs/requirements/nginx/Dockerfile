@@ -10,10 +10,7 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -keyout /etc/nginx/ssl/mfagri.key \
        -subj "/C=MO/L=KH/O=1337/OU=student/CN=mfagri.42.ma"
 
-# COPY index.html /var/www/html
-# 
 COPY nginx.conf /etc/nginx/conf.d
-COPY default etc/nginx/sites-available/default
 
 CMD ["nginx", "-g", "daemon off;"]
 
