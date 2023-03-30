@@ -9,6 +9,8 @@ services:
       - .env
     volumes:
       - wordpress_data:/var/www/html
+    networks:
+      - network
     restart: always
   mariadb:
     build: ./requirements/mariadb
@@ -19,6 +21,8 @@ services:
       - .env
     volumes:
       - mariadb_data:/var/lib/mysql
+    networks:
+      - network
     restart: always
   wordpress:
     depends_on:
@@ -31,7 +35,11 @@ services:
       - .env
     volumes:
       - "wordpress_data:/var/www/html"
-    # restart: alwyas
+    networks:
+      - network
 volumes:
   mariadb_data:
   wordpress_data:
+networks:
+  network:
+    driver: bridge
