@@ -60,7 +60,14 @@ services:
      - "9000"
     networks:
       - network
-
+  website:
+    container_name: website
+    build: ./requirements/bonus/static
+    ports:
+     - '8081:80'
+    restart: always
+    networks:
+      - network
 
 volumes:
   mariadb_data:
