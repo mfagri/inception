@@ -10,7 +10,8 @@ EXPOSE 3306
 
 COPY ./tools/script.sh /
 RUN chmod +x script.sh
-ENTRYPOINT [ "./script.sh" ]
+CMD [ "./script.sh" ]
+
 
 #Command to launch mariadb and enable the database to listen globally - also can be put on mysqldump.cnf file
 # CMD ["mysqld", "--bind-address=0.0.0.0"]

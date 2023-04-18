@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html>
-<title>mfagri</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
 <body>
 
-<!-- <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-  <div class="bgimg"></div>
-</nav> -->
-
-<!-- <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-</nav> -->
-
-<div class="w3-main w3-padding-large" style="margin-left:40%">
-
-
-  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-    <h1 class="w3-jumbo"><b>Mfagri</b></h1>
-    <p>Flutter devloper.</p>
-  </header>
-
-  <!-- Portfolio Section -->
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey">My Portfolio</h2>
-    <hr class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <!-- <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%"> -->
-      </div>
-
-      <div class="w3-half">
-        <!-- <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%"> -->
-      </div>
-    <!-- End photo grid -->
-    </div>
-  <!-- End Portfolio Section -->
+  <nav>
+    <h1 id="h1">MFAGRI</h1>
+    <ul id ="list1">
+      <li><a href="">HOME</a></li>
+      <li><a href="">ABOUT</a></li>
+      <li><a href="">PORTFOLIO</a></li>
+      <li><a href="">SERVICES</a></li>
+    </ul>
+    <ul id="my-button" class="menue">
+      <img  id ="img1"src="menu.png" class="menu-phone">
+    </ul>
+  </nav>
+  <div id="myDiv" class="responsive1">
+      <h1 id="h1">MFAGRI</h1>
+    <ul id ="list">
+      <li><a href="">HOME</a></li><br>
+      <li><a href="">ABOUT</a></li><br>
+      <li><a href="">PORTFOLIO</a></li><br>
+      <li><a href="">SERVICES</a></li>
+    </ul>
   </div>
+  </nav>
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
-    <h2>About</h2>
-    <hr class="w3-opacity">
-    <p>Hello You I am Flutter Devloper.
-    </p>
-    <h3 class="w3-padding-16">My Skills</h3>
-    <p class="w3-wide">Apps Design</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
-    </div>
-    <p class="w3-wide">Flutter</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
-    </div><br>
-
-    <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">10+</span><br>
-        Projects Done
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">100000+</span><br>
-        Happy Clients
-      </div>
-    </div>
-    </div>
-  </div>
-
+<!-- <p>Flutter devloper</p> -->
+<img src="Joe_Goldberg-removebg-preview.png" class="user-img">
+<div id="myDiv2">
+  <h1 id="h2">Hello <span class="auto-input"></span></h1>
+  <p id="p">
+    <b id="warpper1"></b> The real horror of my life is not that I’ve killed some terrible people.<br> The real horror is that the people I’ve loved didn’t love me back.
+  </p>
+  <br>
+  <a href="">Cantact Me</a>
+  <a href="">Download CV</a>
+  <a href="https://github.com/mfagri">Github</a>
 </div>
+<script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(
+      ".auto-input",{
+        strings: ["You","I'm Mfagri","I'm a Flutter Developer"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true
+      }
+    )
+    const button = document.getElementById("img1");
+    const div = document.getElementById("myDiv");
+    button.addEventListener("click" ,(e) =>{
+      if(div.className === "responsive1")
+        div.className += "responsive"
+      else
+        div.className ="responsive1" 
+
+    })
+//     var j = 0;
+// button.addEventListener("click", changeColor);
+//     function changeColor() {
+//       if(j ==1 ){
+//         document.getElementById("myDiv").style.display = "flex";
+//         j = 0;
+//       }
+//       else
+//       {
+//         document.getElementById("myDiv").style.display = "none";
+//         j = 1;
+//       }
+// }
+</script>
 </body>
 </html>

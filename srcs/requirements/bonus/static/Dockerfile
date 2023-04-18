@@ -5,6 +5,9 @@ RUN apt-get update && \
 
 
 COPY tools/index.html /var/www/html
+COPY tools/mystyle.css /var/www/html
+COPY tools/menu.png /var/www/html
+COPY tools/Joe_Goldberg-removebg-preview.png /var/www/html
 
 CMD ["nginx", "-g", "daemon off;"]
 
