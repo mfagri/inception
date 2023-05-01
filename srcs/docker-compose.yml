@@ -13,6 +13,8 @@ services:
     networks:
       - network
     restart: always
+    depends_on:
+      - wordpress
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
@@ -46,8 +48,8 @@ services:
     build: ./requirements/bonus/redis
     depends_on:
       - wordpress
-    ports:
-     - '6379:6379'
+    expose:
+      - 6379
     restart: always
     env_file:
       - .env
@@ -62,7 +64,7 @@ services:
     depends_on:
       - wordpress
     expose:
-     - "9000"
+     - 9000
     networks:
       - network
   website:

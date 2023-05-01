@@ -1,20 +1,3 @@
-# FROM debian:buster
-
-# RUN apt-get update && apt-get install -y wget php php-mbstring php-mysql  && apt-get install -y php-fpm
-
-# RUN wget "https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php" -O /var/www/html/adminer.php
-
-
-# RUN useradd -ms /bin/bash adminer
-# USER www-data
-# RUN chown www-data:www-data /var/www/html/adminer.php
-# RUN chmod 644 /var/www/html/adminer.php
-
-
-# EXPOSE 9000
-
-# # Start Adminer
-# CMD ["php", "-S", "0.0.0.0:9000", "/usr/local/bin/adminer.php"]
 
 
 FROM debian:buster

@@ -20,8 +20,3 @@ kill $(cat /var/run/mysqld/mysqld.pid)
 
 
 mysqld
-
-# docker run -it --name mariadb -p 3306:3306 --network my-network img-mariadb bash
-# docker run -it --name mariadb -p 3306:3306 --network my-network img-mariadb bash
-# docker run -it --name wordpress -p 9000:9000 --network my-network img-wordpress
-#  docker network create my-network
