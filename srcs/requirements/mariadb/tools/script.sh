@@ -10,7 +10,7 @@ echo $DB_NAME
 echo "CREATE DATABASE IF NOT EXISTS $DB_NAME ;" > torun.sql
 echo "CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS' ;" >> torun.sql
 echo "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%' ;" >> torun.sql
-echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '12345' ;" >> torun.sql
+echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '$NEW_PASS' ;" >> torun.sql
 echo "FLUSH PRIVILEGES;" >> torun.sql
 
 mysql < torun.sql

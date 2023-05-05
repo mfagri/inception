@@ -33,7 +33,7 @@ services:
       - mariadb
     container_name: wordpress
     image: wordpress
-    build: ./requirements/wordpres
+    build: ./requirements/wordpress
     ports:
       - "9000:9000"
     env_file:
