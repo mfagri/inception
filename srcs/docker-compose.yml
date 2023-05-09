@@ -81,13 +81,15 @@ volumes:
   mariadb_data:
     driver: local
     driver_opts:
+      type: none
       o: bind
-      device: ${PWD}/srcs/mariadb_data
+      device: /home/mfagri/data/database
   wordpress_data:
     driver: local
     driver_opts:
+      type: none
       o: bind
-      device: ${PWD}/srcs/wordpress_data
+      device: /home/mfagri/data/files
 networks:
   network:
     driver: bridge

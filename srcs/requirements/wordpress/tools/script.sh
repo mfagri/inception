@@ -23,11 +23,11 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
     #install pluging and activate it and enable redis
     wp plugin install redis-cache --activate --path="/var/www/html" --allow-root
     wp redis enable --host=redis --port=6379 --path="/var/www/html" --allow-root
-    # # Set appropriate file permissions
-    # find /var/www/html/wordpress/ -type d -exec chmod 755 {} \;
-    # chown -R www-data:www-data /var/www/html/wordpress/
+    # # Set appropriate file permissions for redis
+    # find /var/www/html/ -type d -exec chmod 755 {} \;
+    chown -R www-data:www-data /var/www/html/
     #example for pluging
-    wp plugin install woocommerce --activate --path="/var/www/html" --allow-root
+    # wp plugin install woocommerce --activate --path="/var/www/html" --allow-root
 fi
 sleep 5
 sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm/pool.d/www.conf
