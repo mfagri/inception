@@ -39,7 +39,7 @@ services:
     env_file:
       - .env
     volumes:
-      - "wordpress_data:/var/www/html"
+      - wordpress_data:/var/www/html
     networks:
       - network
   redis:
@@ -79,7 +79,15 @@ services:
 
 volumes:
   mariadb_data:
+    driver: local
+    driver_opts:
+      o: bind
+      device: ${PWD}/srcs/mariadb_data
   wordpress_data:
+    driver: local
+    driver_opts:
+      o: bind
+      device: ${PWD}/srcs/wordpress_data
 networks:
   network:
     driver: bridge
